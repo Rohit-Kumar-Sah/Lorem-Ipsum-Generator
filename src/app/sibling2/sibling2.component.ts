@@ -16,12 +16,11 @@ constructor(private myservice : Userservices, private myhttp : HttpClient) { }
 
   ngOnInit(): void {
     this.myservice.paragraphs.subscribe(value => this.paragraphs = value );
-    this.myhttp.get('../../assets/data.json').subscribe(data=>this.Lorem= data[0].details)
+    this.myhttp.get('./assets/data.json').subscribe(data=>this.Lorem= data[0].details)
 
   }
 
   ngDoCheck(){
-    console.log("bestie",typeof(this.paragraphs))
     let n= this.paragraphs === undefined ? 0 : Number(this.paragraphs)
     this.myarr= [...Array(n).keys()]
   }
