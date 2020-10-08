@@ -1,0 +1,7 @@
+div{
+    padding: 20px 50px 0 50px;
+    background-color: rgb(236, 238, 107);
+}
+div :last-child {
+    padding-bottom: 20px;
+}
