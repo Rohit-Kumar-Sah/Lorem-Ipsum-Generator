@@ -16,7 +16,9 @@ constructor(private myservice : Userservices, private myhttp : HttpClient) { }
 
   ngOnInit(): void {
     this.myservice.paragraphs.subscribe(value => this.paragraphs = value );
-    this.myhttp.get('./assets/data.json').subscribe(data=>this.Lorem= data[0].details)
+    // this.myhttp.get('./assets/data.json').subscribe(data=>this.Lorem= data[0].details)
+     this.myhttp.get('https://baconipsum.com/api/?type=meat-and-filler&paras='+this.paragraphs).subscribe(data=>this.Lorem= data[0])
+
 
   }
 
